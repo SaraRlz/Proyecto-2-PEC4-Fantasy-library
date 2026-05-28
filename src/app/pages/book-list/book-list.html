@@ -1,0 +1,35 @@
+<div class="header">
+  <h1>Biblioteca Fantástica</h1>
+
+  <div class="buttons">
+    <button mat-raised-button (click)="changeView('cards')">Vista tarjetas</button>
+
+    <button mat-raised-button (click)="changeView('table')">Vista tabla</button>
+  </div>
+</div>
+
+@if (loading && books.length === 0) {
+  <div class="spinner-container">
+    <mat-spinner></mat-spinner>
+  </div>
+}
+
+@if (error) {
+  <p>{{ error }}</p>
+}
+
+@if (books.length > 0) {
+  @if (viewMode === 'cards') {
+    <div class="books-container" @fadeIn>
+      @for (book of books; track book.key) {
+        <app-book-card [book]="book" (selectedBook)="goToDetail($event)" />
+      }
+    </div>
+  }
+
+  @if (viewMode === 'table') {
+    <div @fadeIn>
+      <app-book-grid [books]="books" (selectedBook)="goToDetail($event)" />
+    </div>
+  }
+}

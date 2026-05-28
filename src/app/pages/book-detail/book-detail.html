@@ -1,0 +1,43 @@
+<div class="header">
+  <h1>{{ book.title }}</h1>
+
+  <button mat-raised-button (click)="back()">Volver</button>
+</div>
+
+<mat-card class="detail-card">
+  @if (book.cover_i) {
+    <img [src]="getCoverUrl(book.cover_i)" [alt]="book.title" />
+  }
+
+  <button mat-raised-button (click)="toggleDetails()">Mostrar detalles</button>
+
+  @if (showDetails) {
+    <mat-accordion>
+      <mat-expansion-panel>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Información del libro </mat-panel-title>
+        </mat-expansion-panel-header>
+
+        <p>
+          <strong>Autor:</strong>
+          {{ book.author_name?.[0] || 'Desconocido' }}
+        </p>
+
+        <p>
+          <strong>Año:</strong>
+          {{ book.first_publish_year || '-' }}
+        </p>
+
+        <p>
+          <strong>Editorial:</strong>
+          {{ book.publisher?.[0] || '-' }}
+        </p>
+
+        <p>
+          <strong>Idioma:</strong>
+          {{ book.language?.[0] || '-' }}
+        </p>
+      </mat-expansion-panel>
+    </mat-accordion>
+  }
+</mat-card>

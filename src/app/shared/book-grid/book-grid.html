@@ -1,0 +1,19 @@
+<table>
+  <thead>
+    <tr>
+      <th>Título</th>
+      <th>Autor</th>
+      <th>Año</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    @for (book of books; track book.key) {
+      <tr (click)="selectBook(book)">
+        <td>{{ book.title }}</td>
+        <td>{{ book.author_name?.[0] || 'Desconocido' }}</td>
+        <td>{{ book.first_publish_year || '-' }}</td>
+      </tr>
+    }
+  </tbody>
+</table>

@@ -1,0 +1,30 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(255, 244, 214, 0.9);
+  border: 2px solid #8a5a2b;
+  box-shadow: 0 8px 24px rgba(61, 37, 16, 0.25);
+}
+
+th {
+  background: #6b3f1d;
+  color: #fff3d1;
+}
+
+th,
+td {
+  border: 1px solid #8a5a2b;
+  padding: 12px;
+}
+
+td {
+  color: #3b2412;
+}
+
+tr {
+  cursor: pointer;
+}
+
+tr:hover {
+  background-color: #ead39b;
+}

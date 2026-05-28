@@ -1,0 +1,10 @@
+<mat-card class="book-card" (click)="selectBook()">
+  @if (book.cover_i) {
+    <img mat-card-image [src]="getCoverUrl(book.cover_i)" [alt]="book.title" loading="lazy" />
+  }
+
+  <mat-card-content>
+    <h3>{{ book.title }}</h3>
+    <p>{{ book.author_name?.[0] || 'Autor desconocido' }}</p>
+  </mat-card-content>
+</mat-card>
