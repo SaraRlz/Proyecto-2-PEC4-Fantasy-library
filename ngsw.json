@@ -1,0 +1,88 @@
+{
+  "configVersion": 1,
+  "timestamp": 1780004286912,
+  "index": "/Proyecto-2-PEC4-Fantasy-library/index.html",
+  "assetGroups": [
+    {
+      "name": "app",
+      "installMode": "prefetch",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [
+        "/Proyecto-2-PEC4-Fantasy-library/favicon.ico",
+        "/Proyecto-2-PEC4-Fantasy-library/index.html",
+        "/Proyecto-2-PEC4-Fantasy-library/main-HYARXYIZ.js",
+        "/Proyecto-2-PEC4-Fantasy-library/manifest.webmanifest",
+        "/Proyecto-2-PEC4-Fantasy-library/styles-5SAZEHFV.css"
+      ],
+      "patterns": []
+    },
+    {
+      "name": "assets",
+      "installMode": "lazy",
+      "updateMode": "prefetch",
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "urls": [],
+      "patterns": []
+    }
+  ],
+  "dataGroups": [
+    {
+      "name": "open-library-api",
+      "patterns": [
+        "https:\\/\\/openlibrary\\.org\\/search\\.json\\?subject=fantasy&limit=20&fields=key,title,author_name,first_publish_year,cover_i,publisher,language,subject"
+      ],
+      "strategy": "freshness",
+      "maxSize": 20,
+      "maxAge": 86400000,
+      "timeoutMs": 5000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    },
+    {
+      "name": "book-covers",
+      "patterns": [
+        "https:\\/\\/covers\\.openlibrary\\.org\\/b\\/id\\/.*"
+      ],
+      "strategy": "performance",
+      "maxSize": 100,
+      "maxAge": 604800000,
+      "cacheQueryOptions": {
+        "ignoreVary": true
+      },
+      "version": 1
+    }
+  ],
+  "hashTable": {
+    "/Proyecto-2-PEC4-Fantasy-library/favicon.ico": "9c39f434fe1261f68c5e3eefdf734630d99c5670",
+    "/Proyecto-2-PEC4-Fantasy-library/index.html": "68b04f32d593e6adf3a4ee31f66fa860b9d60a69",
+    "/Proyecto-2-PEC4-Fantasy-library/main-HYARXYIZ.js": "921f087b62a006ad0ec92f3d9d94c4ad14a1d16d",
+    "/Proyecto-2-PEC4-Fantasy-library/manifest.webmanifest": "eacaddc8fea8976c6b0f11e7f8fc37585a6f28d3",
+    "/Proyecto-2-PEC4-Fantasy-library/styles-5SAZEHFV.css": "0847c42f77565349d4f699cd6036e0eb37c893f4"
+  },
+  "navigationUrls": [
+    {
+      "positive": true,
+      "regex": "^\\/.*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*\\.[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*$"
+    },
+    {
+      "positive": false,
+      "regex": "^\\/(?:.+\\/)?[^/]*__[^/]*\\/.*$"
+    }
+  ],
+  "navigationRequestStrategy": "performance"
+}
