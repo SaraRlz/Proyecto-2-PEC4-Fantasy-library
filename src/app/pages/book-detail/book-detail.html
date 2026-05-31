@@ -9,32 +9,32 @@
     <img [src]="getCoverUrl(book.cover_i)" [alt]="book.title" />
   }
 
-  <button mat-raised-button (click)="toggleDetails()">Mostrar detalles</button>
+  <button mat-raised-button (click)="toggleDetails()">Details</button>
 
   @if (showDetails) {
     <mat-accordion>
       <mat-expansion-panel>
         <mat-expansion-panel-header>
-          <mat-panel-title> Información del libro </mat-panel-title>
+          <mat-panel-title> Information </mat-panel-title>
         </mat-expansion-panel-header>
 
         <p>
-          <strong>Autor:</strong>
+          <strong>Author:</strong>
           {{ book.author_name?.[0] || 'Desconocido' }}
         </p>
 
         <p>
-          <strong>Año:</strong>
+          <strong>Publish year:</strong>
           {{ book.first_publish_year || '-' }}
         </p>
 
         <p>
-          <strong>Editorial:</strong>
+          <strong>Publisher:</strong>
           {{ book.publisher?.[0] || '-' }}
         </p>
 
         <p>
-          <strong>Idioma:</strong>
+          <strong>Language:</strong>
           {{ book.language?.[0] || '-' }}
         </p>
       </mat-expansion-panel>
